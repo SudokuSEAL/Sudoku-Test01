@@ -23,6 +23,7 @@ export const createProject = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -30,6 +31,7 @@ export const createProject = /* GraphQL */ `
       searchString
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -55,6 +57,7 @@ export const updateProject = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -62,6 +65,7 @@ export const updateProject = /* GraphQL */ `
       searchString
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -87,6 +91,7 @@ export const deleteProject = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -94,6 +99,7 @@ export const deleteProject = /* GraphQL */ `
       searchString
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -122,6 +128,7 @@ export const createProjectMember = /* GraphQL */ `
         searchString
         createdAt
         updatedAt
+        owner
       }
       student {
         id
@@ -151,10 +158,12 @@ export const createProjectMember = /* GraphQL */ `
         projects {
           nextToken
         }
+        owner
       }
       membership
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -183,6 +192,7 @@ export const updateProjectMember = /* GraphQL */ `
         searchString
         createdAt
         updatedAt
+        owner
       }
       student {
         id
@@ -212,10 +222,12 @@ export const updateProjectMember = /* GraphQL */ `
         projects {
           nextToken
         }
+        owner
       }
       membership
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -244,6 +256,7 @@ export const deleteProjectMember = /* GraphQL */ `
         searchString
         createdAt
         updatedAt
+        owner
       }
       student {
         id
@@ -273,10 +286,12 @@ export const deleteProjectMember = /* GraphQL */ `
         projects {
           nextToken
         }
+        owner
       }
       membership
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -318,9 +333,11 @@ export const createStudent = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
+      owner
     }
   }
 `;
@@ -362,9 +379,11 @@ export const updateStudent = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
+      owner
     }
   }
 `;
@@ -406,9 +425,11 @@ export const deleteStudent = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
+      owner
     }
   }
 `;

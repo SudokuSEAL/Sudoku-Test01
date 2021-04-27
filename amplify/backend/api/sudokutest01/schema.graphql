@@ -1,4 +1,4 @@
-type Project @model {
+type Project @model @auth(rules: [{ allow: owner, operations: [create, delete, update] }]) {
 	id: ID!
 	name: String!
 	description: String
@@ -17,6 +17,7 @@ type Project @model {
 # ^ took out (queries: null) for editing ProjectMembers
 type ProjectMember 
 	@model
+	@auth(rules: [{ allow: owner, operations: [create, delete, update] }])
 	@key(name: "byProject", fields: [ "projectId" , "studentId" ])
 	@key(name: "byStudent", fields: [ "studentId", "projectId" ]) {
 	id: ID!
@@ -27,7 +28,7 @@ type ProjectMember
 	membership: String
 }
 
-type Student @model {
+type Student @model @auth(rules: [{ allow: owner, operations: [create, delete, update] }]) {
 	id: ID!
 	name: String!
 	nickname: String

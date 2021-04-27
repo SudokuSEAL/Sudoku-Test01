@@ -20,6 +20,7 @@ export const getProject = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -27,6 +28,7 @@ export const getProject = /* GraphQL */ `
       searchString
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -53,6 +55,7 @@ export const listProjects = /* GraphQL */ `
         searchString
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }
@@ -80,6 +83,7 @@ export const getProjectMember = /* GraphQL */ `
         searchString
         createdAt
         updatedAt
+        owner
       }
       student {
         id
@@ -109,10 +113,12 @@ export const getProjectMember = /* GraphQL */ `
         projects {
           nextToken
         }
+        owner
       }
       membership
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -140,6 +146,7 @@ export const listProjectMembers = /* GraphQL */ `
           searchString
           createdAt
           updatedAt
+          owner
         }
         student {
           id
@@ -161,10 +168,12 @@ export const listProjectMembers = /* GraphQL */ `
           linkedIn
           createdAt
           updatedAt
+          owner
         }
         membership
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }
@@ -205,9 +214,11 @@ export const getStudent = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
+      owner
     }
   }
 `;
@@ -246,6 +257,7 @@ export const listStudents = /* GraphQL */ `
         projects {
           nextToken
         }
+        owner
       }
       nextToken
     }

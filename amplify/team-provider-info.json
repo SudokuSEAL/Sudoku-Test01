@@ -34,5 +34,23 @@
         "SudokuTest01": {}
       }
     }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sudokutest01-dev-115544-authRole",
+      "UnauthRoleArn": "arn:aws:iam::080684223965:role/amplify-sudokutest01-dev-115544-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::080684223965:role/amplify-sudokutest01-dev-115544-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-sudokutest01-dev-115544-deployment",
+      "UnauthRoleName": "amplify-sudokutest01-dev-115544-unauthRole",
+      "StackName": "amplify-sudokutest01-dev-115544",
+      "StackId": "arn:aws:cloudformation:us-west-2:080684223965:stack/amplify-sudokutest01-dev-115544/de9fc810-a714-11eb-b5f7-0a23c6434ac1",
+      "AmplifyAppId": "d1a99h0dnmvxo5"
+    },
+    "categories": {
+      "auth": {
+        "SudokuTest01": {}
+      }
+    }
   }
 }

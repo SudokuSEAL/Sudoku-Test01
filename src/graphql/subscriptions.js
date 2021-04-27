@@ -20,6 +20,7 @@ export const onCreateProject = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -27,6 +28,7 @@ export const onCreateProject = /* GraphQL */ `
       searchString
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -49,6 +51,7 @@ export const onUpdateProject = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -56,6 +59,7 @@ export const onUpdateProject = /* GraphQL */ `
       searchString
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -78,6 +82,7 @@ export const onDeleteProject = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -85,6 +90,7 @@ export const onDeleteProject = /* GraphQL */ `
       searchString
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -110,6 +116,7 @@ export const onCreateProjectMember = /* GraphQL */ `
         searchString
         createdAt
         updatedAt
+        owner
       }
       student {
         id
@@ -139,10 +146,12 @@ export const onCreateProjectMember = /* GraphQL */ `
         projects {
           nextToken
         }
+        owner
       }
       membership
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -168,6 +177,7 @@ export const onUpdateProjectMember = /* GraphQL */ `
         searchString
         createdAt
         updatedAt
+        owner
       }
       student {
         id
@@ -197,10 +207,12 @@ export const onUpdateProjectMember = /* GraphQL */ `
         projects {
           nextToken
         }
+        owner
       }
       membership
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -226,6 +238,7 @@ export const onDeleteProjectMember = /* GraphQL */ `
         searchString
         createdAt
         updatedAt
+        owner
       }
       student {
         id
@@ -255,10 +268,12 @@ export const onDeleteProjectMember = /* GraphQL */ `
         projects {
           nextToken
         }
+        owner
       }
       membership
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -297,9 +312,11 @@ export const onCreateStudent = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
+      owner
     }
   }
 `;
@@ -338,9 +355,11 @@ export const onUpdateStudent = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
+      owner
     }
   }
 `;
@@ -379,9 +398,11 @@ export const onDeleteStudent = /* GraphQL */ `
           membership
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
+      owner
     }
   }
 `;
