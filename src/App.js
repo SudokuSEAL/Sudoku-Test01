@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+/* src/App.js */
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import Students from './Students';
+import Student from './Student';
+import Projects from './Projects';
+import Project from './Project';
+import AddStudentPage from './AddStudentPage';
+import Error from './Error';
+import Navigation from './Navigation';
+// import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
+import AddProjectPage from "./AddProjectPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (      
+       <BrowserRouter>
+        <div>
+          <Navigation/>
+            <Switch>
+              <Route path="/" component={Home} exact/>
+              <Route path="/students" component={Students} exact/>
+              <Route path="/students/:studentId" component={Student}/>
+              <Route path="/projects" component={Projects} exact/>
+              <Route path="/projects/:projectId" component={Project}/>
+              <Route path="/AddStudentPage" component={AddStudentPage}/>
+              <Route path="/AddProjectPage" component={AddProjectPage}/>
+              <Route component={Error}/>
+            </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
-
+ 
+//export default withAuthenticator(App);
 export default App;
