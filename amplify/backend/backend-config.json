@@ -6,5 +6,28 @@
       "dependsOn": [],
       "customAuth": false
     }
+  },
+  "storage": {
+    "photo": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
+  },
+  "api": {
+    "sudokutest01": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authSudokuTest01"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
+    }
   }
 }

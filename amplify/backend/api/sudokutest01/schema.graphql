@@ -1,0 +1,68 @@
+type Project @model {
+	id: ID!
+	name: String!
+	description: String
+	pictureURLs: [String]
+	commandCenterLink: String
+	externalSiteLink: String
+	slackChannelLinks: [String]
+	keywords: [String]
+	members: [ProjectMember] @connection(keyName: "byProject", fields: ["id"])
+	roles: [String]
+	searchString: String
+}
+
+# Model to join project and student (for many to many connection)
+# Queries disabled as unneeded (use Project.members and Student.projects)
+# ^ took out (queries: null) for editing ProjectMembers
+type ProjectMember 
+	@model
+	@key(name: "byProject", fields: [ "projectId" , "studentId" ])
+	@key(name: "byStudent", fields: [ "studentId", "projectId" ]) {
+	id: ID!
+	projectId: ID!
+	studentId: ID!
+	project: Project! @connection(fields: [ "projectId" ])
+	student: Student! @connection(fields: [ "studentId" ])
+	membership: String
+}
+
+type Student @model {
+	id: ID!
+	name: String!
+	nickname: String
+	phonenumber: String
+	email: String!
+	specialty: String
+	major: Major!
+	year: String
+	position: String
+	since: Date
+	teamLeader: String
+	photoURL: String
+	description: String
+	skills: String
+	status: String
+	searchString: String
+	resumeLink: String
+	linkedIn: String
+	createdAt: AWSDateTime!
+	updatedAt: AWSDateTime!
+	projects: [ProjectMember] @connection(keyName: "byStudent", fields: ["id"])
+}
+
+type Date {
+	month: Int!
+	day: Int!
+	year: Int!
+}
+
+enum Major {
+	EE
+	ME
+	BUSINESS
+	ENGLISH
+	CSE
+	HCDE
+	OTHER
+}

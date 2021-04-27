@@ -1,6 +1,6 @@
 {
     "identityPoolName": "testAuthIdentityPool",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "sudoku38bd6a8a",
     "userPoolName": "SudokuTest01",
     "autoVerifiedAttributes": [
